@@ -13,7 +13,9 @@ public class TotalWar extends JavaPlugin {
 	}
 	
 	public void onEnable() {
+		/* Static instance */
 		instance = this;
+		
 		Log.setDebugging(true);
 	}
 	
