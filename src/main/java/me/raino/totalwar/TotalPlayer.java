@@ -13,6 +13,7 @@ public class TotalPlayer {
 	private final Player player;
 	private int kills;
 	private int deaths;
+	private boolean isPlaying;
 
 	public TotalPlayer(Player player) {
 		this.player = player;
@@ -25,6 +26,23 @@ public class TotalPlayer {
 	public void logout() {
 		if(players.contains(this)) players.remove(this);
 	}
+
+
+	public static TotalPlayer getPlayer(Player player) {
+		for (TotalPlayer tp : players) {
+			if (tp.getPlayer() == player) return tp;
+		}
+		return new TotalPlayer(player);
+	}
+
+	public boolean isPlaying() {
+		return isPlaying;
+	}
+
+	public void setPlaying(boolean isPlaying) {
+		this.isPlaying = isPlaying;
+	}
+	
 	
 	public int getDeaths() {
 		return deaths;
@@ -48,13 +66,6 @@ public class TotalPlayer {
 
 	public void setKills(int kills) {
 		this.kills = kills;
-	}
-
-	public static TotalPlayer getPlayer(Player player) {
-		for (TotalPlayer tp : players) {
-			if (tp.getPlayer() == player) return tp;
-		}
-		return new TotalPlayer(player);
 	}
 
 }
