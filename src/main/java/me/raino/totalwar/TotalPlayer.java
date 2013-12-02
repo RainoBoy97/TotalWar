@@ -18,6 +18,14 @@ public class TotalPlayer {
 		this.player = player;
 	}
 
+	public void login() {
+		if(!players.contains(this)) players.add(this);
+	}
+	
+	public void logout() {
+		if(players.contains(this)) players.remove(this);
+	}
+	
 	public int getDeaths() {
 		return deaths;
 	}
