@@ -44,7 +44,7 @@ public class TotalTeam {
 	}
 	
 	
-	public TotalTeam getTeam(String name) {
+	public static TotalTeam getTeam(String name) {
 		for (TotalTeam tt: teams) {
 			if (tt.getName().equals(name)){
 				return tt;
